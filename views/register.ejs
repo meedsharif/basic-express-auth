@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Register</title>
+	</head>
+	<body>
+		<form action="/register" method="post">
+			<% if (errorMessage) { %>
+				<div class="label label-danger"><%= errorMessage %></div>
+			<% } %>
+			<h2>Sign Up</h2>
+			<div>
+				<label for="name">Name</label>
+				<input name="name" type="text" />
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<input name="email" type="email" />
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input name="password" type="password" />
+			</div>
+			<div>
+				<label for="confirmpassword">Confirm Password</label>
+				<input name="confirmpassword" type="password" />
+			</div>
+			<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+			<div>
+				<input type="submit" value="Register" id="submit" />
+			</div>
+			<a href="/login">Already a member? Login!</a>
+		</form>
+	</body>
+</html>

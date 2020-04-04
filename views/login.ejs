@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Login</title>
+	</head>
+	<body>
+		<form action="/login" method="post">
+			<% if (flash) { %>
+			 <div class="label label-<%= flash.type %>"><%= flash.message %></div>
+			<% } %>
+			<h2>Login</h2>
+				<label for="email">Email</label>
+				<input name="email" type="email" />
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<input name="password" type="password" />
+			</div>
+			<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+			<div>
+				<input type="submit" value="Login" id="submit" />
+			</div>
+			<a href="/register">Create a new account</a>
+		</form>
+	</body>
+</html>
