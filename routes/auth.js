@@ -6,7 +6,7 @@ const router = express.Router();
 
 const User = require('../models/User');
 
-router.get('/login', async (req, res) => {
+router.get('/login', (req, res) => {
 	res.render('login', { flash: {} });
 });
 
